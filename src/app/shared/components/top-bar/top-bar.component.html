@@ -1,0 +1,36 @@
+<div class="header">
+
+
+<div class="search">
+    <div class="search-box">
+      <input class="form-control" type="text" placeholder="Start searching products" matInput [matAutocomplete]="auto"  >
+     
+     
+       <mat-autocomplete #auto="matAutocomplete">
+        <!-- <mat-option *ngFor="let option of products" [value]="option.productId"> 
+          <div (click)="navigateToDetails(option.productId)">{{option.name}}</div> 
+        </mat-option>  -->
+      </mat-autocomplete> 
+    </div>
+
+    <div class="button-box">
+      <a (click)="navigateToSearch()"><button mat-button class="button" type="submit"><img
+            src="../../../assets/icons/search.png" /></button></a>
+    </div>
+  </div>
+
+  <div class="profile">
+    <mat-icon>account_circle</mat-icon>
+     Sharu Ananthan
+  </div>
+
+  <div class="checkout-icon">
+    <!-- Icon with a badge -->
+    <mat-icon matBadge="15" matBadgeColor="warn">home</mat-icon>
+      <!-- Include text description of the icon's meaning for screen-readers -->
+      <!-- <span class="cdk-visually-hidden">
+        Example with a home icon with overlaid badge showing the number 15
+      </span> -->
+  </div>
+
+</div>
