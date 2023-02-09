@@ -1,14 +1,56 @@
 .grid-container{
     display: grid;
     grid-template-columns: auto auto auto auto;
-    margin-left: 10px;
-    margin-right: 10px;
+     margin-left: 70px;
+    margin-right: 70px;
     
-    column-gap: 50px;
-    row-gap: 50px;
+     column-gap: 50px;
+    row-gap: 50px; 
 }
 
 .grid-item{
     border: 1px solid #04261b;
     height: 350px;
+    background-color:#849892 ;
+}
+
+.product-image{
+    height:45% ;
+    width: 75%;
+    border: 1px solid #209872;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.product-detail{
+height: 15%;
+width: 75%;
+margin: 0 auto;
+}
+
+.product-price{
+height: 10%;
+width: 75%;
+margin: 0 auto;
+}
+
+.product-rating{
+    height: 10%;
+    width: 75%;
+    margin: 0 auto; 
+}
+
+.button{
+    margin: 0 auto;
+    width: 60%;
+    height: 10%;
+}
+.add-button{
+    color: #209872;
+    background-color: #244b3f;
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+    border: none;
+    box-shadow:2px 2px #1c312b ;
 }

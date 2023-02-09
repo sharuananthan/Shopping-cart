@@ -1,0 +1,17 @@
+.order-main{
+    
+}
+
+.order-item{
+border: 2px solid rgb(11, 71, 39);
+/* width: 90%; */
+height: auto;
+background-color: rgb(122, 149, 140);
+align-items: center;
+margin-bottom: 20px;
+}
+.order-image{
+    margin: 10px;
+    width: 20%;
+    height: 70%;
+}

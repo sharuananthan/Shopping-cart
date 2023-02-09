@@ -1,0 +1,26 @@
+.grid-container{
+    display: grid;
+    grid-template-columns: auto auto auto ;
+    margin-top: 20px;
+}
+
+.grid-container>div{
+    padding: 20px 0;
+}
+
+.orderList{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    border: 1px solid #209872;
+    background-color: aquamarine;
+}
+
+.checkoutList{
+    background-color: bisque;
+}
+
+.price-box{
+    border: 1px solid #209872;
+    width: 85%;
+    background-color: rgb(132, 94, 167);
+}

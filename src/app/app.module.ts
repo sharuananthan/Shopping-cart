@@ -6,7 +6,8 @@ import { AppComponent } from './app.component';
 import { ProductModule } from './modules/product/product.module';
 import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { CheckoutModule } from './modules/checkout/checkout.module';
+import { AuthModule } from './modules/auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -14,11 +15,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
+    BrowserModule,
     ProductModule,
+    AuthModule,
     SharedModule,
+    CheckoutModule,
     BrowserAnimationsModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
