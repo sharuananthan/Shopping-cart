@@ -1,1 +1,115 @@
-<p>register works!</p>
+<div class="container">
+    <form class="form-group" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div class="form-card">
+        <h1>Register</h1>
+      <div class="form-control">
+        <label>Name</label>
+        <div>
+          <input placeholder="Enter Name" type="text" formControlName="name" />
+        </div>
+        <div class="invalid">
+          <div *ngIf="f['name'].touched && f['name'].invalid">
+            <div *ngIf="f['name'].errors && f['name'].errors['required']">
+              Full name is Required
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="form-control">
+        <label>E-mail Address</label>
+        <div>
+          <input placeholder="Enter Email" type="text" formControlName="email" />
+        </div>
+        <div class="invalid">
+          <div *ngIf="f['email'].touched && f['email'].invalid">
+            <div *ngIf="f['email'].errors && f['email'].errors['required']">
+              Email is required.
+            </div>
+            <div *ngIf="f['email'].errors && f['email'].errors['email']">
+              Email must be a valid email address.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-control">
+        <label>Password</label>
+        <div>
+          <input placeholder="Enter Password" type="password" formControlName="password" />
+        </div>
+        <div class="invalid">
+          <div *ngIf="f['password'].touched && f['password'].invalid">
+            <div *ngIf="f['password'].errors && f['password'].errors['required']">
+              Password is required
+            </div>
+            <div
+              *ngIf="f['password'].errors && f['password'].errors['minlength']"
+            >
+              Minimum length is 8
+            </div>
+            <div
+              *ngIf="f['password'].touched &&
+                f['password'].errors?.['invalidPassword']"
+            >
+              Password should have minimum 8 characters, at least 1 uppercase
+              letter, 1 lowercase letter and 1 number
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="form-control">
+        <label>Re-Enter Password</label>
+        <div>
+          <input
+          placeholder="Re Enter Password"
+            type="password"
+            class="form-control"
+            formControlName="confirmPassword"
+          />
+        </div>
+        <div class="invalid">
+          <div
+            *ngIf="f['confirmPassword'].touched && f['confirmPassword'].invalid"
+          >
+            <div
+              *ngIf="
+                f['confirmPassword'].errors &&
+                f['confirmPassword'].errors['required']
+              "
+            >
+              Confirm Password is required
+            </div>
+            <div
+              *ngIf="
+                f['confirmPassword'].errors &&
+                f['confirmPassword'].errors['minlength']
+              "
+            >
+              Minimum length is 8
+            </div>
+            <div
+              *ngIf="
+                f['confirmPassword'].errors &&
+                f['confirmPassword'].errors['confirmedValidator']
+              "
+            >
+              Password mismatch
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-control">
+        <button class="btn" [disabled]="!registerForm.valid" type="submit">
+          Register
+        </button>
+      </div>
+      <div class="dont-container">
+        <div ></div>
+        <a class="forgot-btn" routerLink="/login">Already Have an Account? </a>
+        <div></div>
+      </div>
+    </div>
+    </form>
+  </div>
+  

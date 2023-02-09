@@ -29,30 +29,12 @@
 .form-card  h1 {
           color:  rgb(9, 2, 2);
         }
-/* 
+
 .dont-container {
           margin-top: 15px;
           display: flex;
           height: 5vh;
-          :nth-child(1) {
-            margin-top: 2.5%;
-            width: 27%;
-            height: 2px;
-            background: var(--secondary-blue);
-          }
-          :nth-child(2) {
-            width: 50%;
-            font-size: 14px;
-            text-align: center;
-  
-          }
-          :nth-child(3) {
-            margin-top: 2.5%;
-            width: 27%;
-            height: 2px;
-            background: var(--secondary-blue);
-          }
-          */
+}       
 
 .form-control input 
            {
@@ -60,7 +42,7 @@
             height: 40px;
             border-radius: 10px;
             font-size: 14px;
-            border: 2px solid var(--secondary-blue);
+            border: 2px solid  rgb(119, 123, 123);
             padding-left: 3%;
           }
 
@@ -78,16 +60,18 @@
             border-radius: 10px;
             font-size: 14px;
             border: none;
-            color: rgb(210, 202, 202);
-            background-color: var(--secondary-blue);
+            color: rgb(250, 229, 234);
+            background-color: rgb(182, 154, 154);
           }
         
   
-  .forgot-btn a {
-    text-decoration: none;
-  }
-  
-  .forgot-btn a:hover {
-    cursor: pointer;
-  }
-  
+          a {
+            text-decoration: none;
+            color: rgb(250, 229, 234);
+          }
+          
+          a:hover {
+            cursor: pointer;
+            color: rgb(41, 36, 37);
+          }
+          

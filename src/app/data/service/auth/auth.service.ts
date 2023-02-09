@@ -7,6 +7,7 @@ import { catchError, map } from 'rxjs/operators';
 import { throwError } from 'rxjs';
 import { LoginResponse } from '../../schema/auth/loginResponse';
 import { ApiResponse } from '../../schema/common/apiResponse';
+import { RegisterResponse } from '../../schema/auth/registerResponse';
 
 @Injectable({
   providedIn: 'root'
@@ -39,14 +40,20 @@ export class AuthService {
       );
   }
 
+  register(registerForm: any): Observable<ApiResponse<RegisterResponse>> {
+    return this.http
+      .post<ApiResponse<RegisterResponse>>(
+        this.baseUrl + '/register',
+        registerForm 
+      )
+      .pipe(catchError(this.handleError));
+  }
 
-
-
-
-
-
-
-
+  logout() {
+    localStorage.removeItem('user');
+    this.userSubject.next(null);
+    this.router.navigate(['/login']);
+  }
 
   public get userValue() {
     return this.userSubject?.value || null;
