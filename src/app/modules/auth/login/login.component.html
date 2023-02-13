@@ -5,27 +5,22 @@
       <div class="form-card">
         <h1>Sign In</h1>
         <div class="form-control">
-          <label>Email</label>
+          <label>Username</label>
           <div>
             <input
-              type="email"
-              formControlName="email"
-              placeholder="Enter Your Email"
+              type="text"
+              formControlName="username"
+              placeholder="Enter Your Name"
             />
           </div>
           <div class="invalid">
-            <div *ngIf="f['email'].touched && f['email'].invalid">
-              <div *ngIf="f['email'].errors && f['email'].errors['required']">
-                Email is required.
+            
+              <div *ngIf="f['username'].errors && f['username'].errors['required']">
+                Username is required.
               </div>
-              <div
-                class="invalid"
-                *ngIf="f['email'].errors && f['email'].errors['email']"
-              >
-                Invalid email.
-              </div>
+              
             </div>
-          </div>
+          
         </div>
   
         <div class="form-control">
@@ -46,11 +41,7 @@
             >
               Password is required.
             </div>
-            <div
-              *ngIf="f['password'].errors && f['password'].errors['minLength']"
-            >
-              Minimum length is 8 charectors
-            </div>
+            
           </div>
         </div>
   

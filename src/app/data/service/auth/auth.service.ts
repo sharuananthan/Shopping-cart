@@ -14,49 +14,31 @@ import { RegisterResponse } from '../../schema/auth/registerResponse';
 })
 export class AuthService {
 
- private userSubject: BehaviorSubject<LoginResponse|null>;
- public user!: Observable<LoginResponse | null>;
- readonly baseUrl = environment.baseApiUrl + '/api/auth';
+//  private userSubject: BehaviorSubject<LoginResponse|null>;
+//  public user!: Observable<LoginResponse | null>;
+ readonly baseUrl = environment.baseApiUrl + '/auth';
 
-  constructor(private http: HttpClient, private router: Router) {
-    this.userSubject = new BehaviorSubject(
-      JSON.parse(localStorage.getItem('user')!)
-    );
-    this.user = this.userSubject.asObservable();
+  constructor(private http: HttpClient, private router: Router) {}
+
+  login(loginForm: any){
+    return this.http.post<LoginResponse>(this.baseUrl + '/login', loginForm)
+      
+      
   }
 
-  login(loginForm: any): Observable<ApiResponse<LoginResponse>> {
-    return this.http
-      .post<ApiResponse<LoginResponse>>(this.baseUrl + '/login', loginForm)
-      .pipe(
-        map((user) => {
-          if (user.status === 'SUCCEEDED') {
-            localStorage.setItem('user', JSON.stringify(user?.data));
-            this.userSubject.next(user?.data);
-          }
-          return user;
-        }),
-        catchError(this.handleError)
-      );
-  }
-
-  register(registerForm: any): Observable<ApiResponse<RegisterResponse>> {
-    return this.http
-      .post<ApiResponse<RegisterResponse>>(
-        this.baseUrl + '/register',
-        registerForm 
-      )
-      .pipe(catchError(this.handleError));
+  register(RegisterResponse: any): Observable<any> {
+    return this.http.post<any>(this.baseUrl + '/register',RegisterResponse )
+      
   }
 
   logout() {
     localStorage.removeItem('user');
-    this.userSubject.next(null);
+   
     this.router.navigate(['/login']);
   }
 
   public get userValue() {
-    return this.userSubject?.value || null;
+    return localStorage.getItem('user');
   }
   
   private handleError(error: HttpErrorResponse) {

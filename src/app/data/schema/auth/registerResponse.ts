@@ -1,6 +1,9 @@
 
   export interface RegisterResponse{
-    isRegistered : boolean;
-    message : string;
+    userId : number;
+    userName : string;
+    email : string;
+    password : string;
+
   }
   
