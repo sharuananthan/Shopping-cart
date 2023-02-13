@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { SharedDataService } from 'src/app/shared-data.service';
 @Component({
   selector: 'app-top-bar',
   templateUrl: './top-bar.component.html',
@@ -9,8 +10,10 @@ export class TopBarComponent {
 
   constructor(
     private _router: Router,
+    private sharedService:SharedDataService
   ){}
-value=10;
+
+numberOfItems : number = 0;
 
   navigateToSearch(){
     this._router.navigate(['/checklist'])
@@ -19,5 +22,10 @@ value=10;
   navigateToDetails(){
 
   }
+
+  public getaddToCart(){
+    return this.sharedService.numberOfItems;
+  }
+
 
 }
