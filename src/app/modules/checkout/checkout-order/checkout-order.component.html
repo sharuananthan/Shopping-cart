@@ -3,11 +3,42 @@
          <div class="order-image">
             <img width=100% height=100% src="../../../assets/icons/shoes.PNG" />
          </div>
+         <div class="product-details">
+            <p>Product Name</p>
+            <p>Product Price</p>
+         </div>
+         <div class="product-select">
+            <button class="product-button" (click)="addProduct()">+</button>
+            <p class="product-count">{{count}}</p>
+            <button class="product-button" (click)="removeProduct()">-</button>
+         </div>
+         <div class="totalPrice">
+            <p>Total Price</p>
+         </div>
+         <div class="delete-product">
+            <button class="delete-button" (click)="deleteProduct()">X</button>
+         </div>
     </div>
 
     <div class="order-item">
-        <div class="order-image">
-           <img width=100% height=100% src="../../../assets/icons/shoes.PNG" />
-        </div>
-   </div>
+      <div class="order-image">
+         <img width=100% height=100% src="../../../assets/icons/shoes.PNG" />
+      </div>
+      <div class="product-details">
+         <p>Product Name</p>
+         <p>Product Price</p>
+      </div>
+      <div class="product-select">
+         <button>+</button>
+         <p>1</p>
+         <button>-</button>
+      </div>
+      <div class="totalPrice">
+         <p>Total Price</p>
+      </div>
+      <div class="delete-product">
+         <button>X</button>
+      </div>
+ </div>
+    
 </div>

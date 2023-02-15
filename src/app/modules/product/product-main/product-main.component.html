@@ -1,11 +1,12 @@
 <div class="grid-container">
-    <div class="grid-item" *ngFor="let product of products">Box 
+    <div class="grid-item" *ngFor="let product of products"> 
+        
         <div class="product-image">
             <img width=100% height=100% src="../../../assets/icons/shoes.PNG" />
         </div>
-        <div class="product-detail">{{product.productName}}</div>
-        <div class="product-price" >${{product.price}} </div>
-        <div class="product-rating">Ratings: {{product.rating}}</div>
+        <div class="product-detail"><h3>{{(product.productName.length > 20) ? (product.productName | slice:0:20) + '...' : product.productName }}</h3></div>
+        <div class="product-price" ><h1>{{product.price}} </h1></div>
+        <div class="product-rating"><h4>Ratings: {{product.rating}}</h4></div>
         <div  class="button"><a (click)="addToCart(product.productId)"><button class="add-button">Add to cart</button></a></div>
     </div>
      

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { OrderService } from 'src/app/data/service/order/order.service';
 import { SharedDataService } from 'src/app/shared-data.service';
 @Component({
   selector: 'app-top-bar',
@@ -10,12 +11,19 @@ export class TopBarComponent {
 
   constructor(
     private _router: Router,
-    private sharedService:SharedDataService
+    private sharedService:SharedDataService,
+    private orderService:OrderService
   ){}
 
-numberOfItems : number = 0;
+//numberOfItems : number = 0;
 
   navigateToSearch(){
+    this.orderService.createOrder(this.sharedService.orderDetails).subscribe(
+      (res) => {
+        console.log(res);
+      }
+    )
+
     this._router.navigate(['/checklist'])
   }
 
@@ -24,7 +32,8 @@ numberOfItems : number = 0;
   }
 
   public getaddToCart(){
-    return this.sharedService.numberOfItems;
+    
+    return localStorage.getItem('numberOfItems');
   }
 
 

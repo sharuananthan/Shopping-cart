@@ -2,16 +2,19 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CheckoutMainComponent } from './checkout-main/checkout-main.component';
 import { CheckoutOrderComponent } from './checkout-order/checkout-order.component';
-
+import {MatDialogModule} from '@angular/material/dialog';
+import { CheckoutDialogComponent } from './checkout-dialog/checkout-dialog.component';
 
 
 @NgModule({
   declarations: [
     CheckoutMainComponent,
-    CheckoutOrderComponent
+    CheckoutOrderComponent,
+    CheckoutDialogComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MatDialogModule
   ],
 
   exports:[CheckoutOrderComponent]

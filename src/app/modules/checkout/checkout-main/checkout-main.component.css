@@ -11,16 +11,70 @@
 .orderList{
     grid-column-start: 1;
     grid-column-end: 3;
-    border: 1px solid #209872;
-    background-color: aquamarine;
 }
 
-.checkoutList{
-    background-color: bisque;
-}
+/* .checkoutList{
+} */
 
 .price-box{
-    border: 1px solid #209872;
-    width: 85%;
-    background-color: rgb(132, 94, 167);
+    width: 70%;
+    border: #2c295f 2px solid;
+    height: 100%;
+}
+
+.calculate-price{
+    margin: 10%;
+    text-align: right ;
+
+}
+
+.button-box{
+    display: flex;
+    justify-content: center;
+}
+
+.checkoutButton{
+    color: #2c295f;
+    background-color: #a8a7c5;
+    /* margin: 0 auto; */
+    height:40px;
+    width: 60%;
+    border-radius: 20px;
+    border: none;
+    transition-duration:0.4s ;
+    font-size: 16px;
+
+    /* box-shadow:2px 2px #1c312b ; */
+}
+
+.checkoutButton:hover{
+    color: #a8a7c5;
+    background-color: #2c295f;
+    
+}
+
+.button-shopping{
+    margin: 0 auto;
+    /* display: flex;
+    justify-content: center; */
+}
+
+.shppingButton{
+    color: #2c295f;
+    background-color: #a8a7c5;
+    /* margin: 0 auto; */
+    height:40px;
+    width: 60%;
+    border-radius: 20px;
+    border: none;
+    transition-duration:0.4s ;
+    font-size: 16px;
+
+    /* box-shadow:2px 2px #1c312b ; */
+}
+
+.shppingButton:hover{
+    color: #a8a7c5;
+    background-color: #2c295f;
+    
 }

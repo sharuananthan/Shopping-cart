@@ -13,8 +13,8 @@ import { OrderService } from 'src/app/data/service/order/order.service';
 })
 export class ProductMainComponent {
 products : Product[] = [];
-orders: Order[]= [];
-orderDetails: Order[] = [];
+// orders: Order[]= [];
+// orderDetails: Order[] = [];
 
   constructor(private productService:ProductService,
               private _router: Router,
@@ -40,30 +40,31 @@ orderDetails: Order[] = [];
 
     public addToCart(productId:number){
       this.sharedService.numberOfItems +=  1;
+      localStorage.setItem('numberOfItems', this.sharedService.numberOfItems.toString());
       //get the product id
-      this.orders.push({productId:productId});
-      
-      
-      console.log(this.orders);
+      this.sharedService.orderDetails.push({productId:productId});
+      localStorage.setItem('orderDetails', JSON.stringify(this.sharedService.orderDetails));
+      console.log(this.sharedService.orderDetails);
 
     }
+  
 
-    createOrder(){
-      this.orderDetails= new Array<Order>();
-      for(let i=0; i<this.orders.length; i++){
-        this.orderDetails.push(this.orders[i]);
-        console.log(this.orderDetails);
+    // createOrder(){
+    //   this.orderDetails= new Array<Order>();
+    //   for(let i=0; i<this.orders.length; i++){
+    //     this.orderDetails.push(this.orders[i]);
+    //     console.log(this.orderDetails);
 
-      }
+    //   }
 
-      this.orderService.createOrder(this.orderDetails).subscribe(
-        (res) => {
-          console.log(res);
-          console.log("Order is created");
-        }
-      );
+    //   this.orderService.createOrder(this.orderDetails).subscribe(
+    //     (res) => {
+    //       console.log(res);
+    //       console.log("Order is created");
+    //     }
+    //   );
       
-    }
+    // }
 
 
 }

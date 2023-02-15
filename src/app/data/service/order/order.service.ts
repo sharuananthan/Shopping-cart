@@ -16,4 +16,9 @@ export class OrderService {
     return this.http.post<any>(this.baseUrl, order);
     
   }
+
+  getOrders(): Observable<Order[]> {
+    return this.http.get<Order[]>(this.baseUrl);
+  }
+  
 }

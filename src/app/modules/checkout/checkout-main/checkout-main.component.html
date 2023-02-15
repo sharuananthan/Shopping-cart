@@ -6,8 +6,23 @@
         
     <div class="checkoutList">
         <div class="price-box">
-            SubTotal Price
+          <div class="calculate-price">
+            <p>Subtotal Price</p>
+            <p>{{subTotal}}</p>
+            <p>Discount</p>
+            <p>{{discount}}</p>
+            <p>Delivery</p>
+            <p>{{delivery}}</p>
+            <p>Total Price</p>
+            <p>{{totalPrice}}</p>
+          </div>
 
+            <div class="button-box">
+                <button class="checkoutButton" (click)="openDialog()" >Checkout</button>
+            </div>
         </div>
-        </div>
+
+        <div class="button-shopping">
+          <button class="shppingButton" (click)="navigateToProduct()" >Continue Shopping</button>
+      </div>
 </div>

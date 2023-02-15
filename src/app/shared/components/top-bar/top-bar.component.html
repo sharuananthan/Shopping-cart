@@ -14,20 +14,20 @@
     </div>
 
     <div class="button-box">
-      <a (click)="navigateToSearch()"><button mat-button class="button" type="submit"><img
+      <a (click)="navigateToDetails()"><button mat-button class="button" type="submit"><img
             src="../../../assets/icons/search.png" /></button></a>
     </div>
   </div>
 
   <div class="profile">
-    <mat-icon>account_circle</mat-icon>
-     Sharu Ananthan
+    <mat-icon class="user-icon">account_circle</mat-icon>
+     <p class="username">Sharu Ananthan</p>
   </div>
 
   <div class="checkout-icon">
     <!-- Icon with a badge -->
     <a (click)="navigateToSearch()">
-      <mat-icon matBadge={{getaddToCart()}} matBadgeColor="warn">home</mat-icon></a>
+      <mat-icon matBadge={{getaddToCart()}} matBadgeColor="accent">local_grocery_store</mat-icon></a>
       
   </div>
 
