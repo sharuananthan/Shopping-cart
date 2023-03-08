@@ -15,26 +15,32 @@ orders:Order[] = [];
   constructor(private sharedService:SharedDataService,
               private orderService:OrderService) { }
 
-  getOrders(){
-    this.orderService.getOrders().subscribe(
+
+  ngOnInit(): void {
+    this.sharedService.order$.subscribe(
       (res:Order[]) => {
         this.orders = res;
-        console.log(this.orders);
+        console.log(res);
       }
     )
-
+    this.getOrders();
   }
 
   
+getOrders(){
+  
+  this.orders = localStorage.getItem('orderDetails') ? JSON.parse(localStorage.getItem('orderDetails') || '{}') : [];
+  console.log(this.orders);
+}
+  
 
-  addProduct(){
-     this.count++;
+  addProductInCart(order:any){
      this.sharedService.numberOfItems +=  1;
      localStorage.setItem('numberOfItems', this.sharedService.numberOfItems.toString());
-
+     this.sharedService.addProduct(order);
   }
 
-  removeProduct(){
+  removeProductInCart(){
     if(this.count>0){
       this.count--;
       this.sharedService.numberOfItems -=  1;

@@ -3,5 +3,7 @@ export interface Product{
     productName:string;
     price:string;
     rating:number;
+    discount:number;
+    productImage:string;
 
   }

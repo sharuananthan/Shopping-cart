@@ -1,3 +1,7 @@
 export interface Order{
-    productId:number;
+    productName:string;
+    price:number;
+    count:number;
+    totalPrice:number;
+    
   }

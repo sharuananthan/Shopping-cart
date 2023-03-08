@@ -5,11 +5,11 @@
       <div class="form-control">
         <label>Name</label>
         <div>
-          <input placeholder="Enter Name" type="text" formControlName="username" />
+          <input placeholder="Enter Name" type="text" formControlName="userName" />
         </div>
         <div class="invalid">
-          <div *ngIf="f['username'].touched && f['username'].invalid">
-            <div *ngIf="f['username'].errors && f['username'].errors['required']">
+          <div *ngIf="f['userName'].touched && f['userName'].invalid">
+            <div *ngIf="f['userName'].errors && f['userName'].errors['required']">
               User name is Required
             </div>
           </div>

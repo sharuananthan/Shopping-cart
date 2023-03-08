@@ -1,32 +1,32 @@
-<div class="header">
-
+<div class="header" >
 
 <div class="search">
     <div class="search-box">
-      <input class="form-control" type="text" placeholder="Start searching products" matInput [matAutocomplete]="auto"  >
+      <input class="form-control" type="text" placeholder="Start searching products" matInput 
+      [(ngModel)]="searchKey" >
      
      
-       <mat-autocomplete #auto="matAutocomplete">
-        <!-- <mat-option *ngFor="let option of products" [value]="option.productId"> 
+       <!-- <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let option of products" [value]="option.productId"> 
           <div (click)="navigateToDetails(option.productId)">{{option.name}}</div> 
-        </mat-option>  -->
-      </mat-autocomplete> 
+        </mat-option> 
+      </mat-autocomplete>  -->
     </div>
 
     <div class="button-box">
-      <a (click)="navigateToDetails()"><button mat-button class="button" type="submit"><img
+      <a (click)="getProductsBySearchKey()"><button mat-button class="button" type="submit"><img
             src="../../../assets/icons/search.png" /></button></a>
     </div>
   </div>
 
   <div class="profile">
     <mat-icon class="user-icon">account_circle</mat-icon>
-     <p class="username">Sharu Ananthan</p>
+     <p class="username" >{{username}}</p>
   </div>
 
   <div class="checkout-icon">
     <!-- Icon with a badge -->
-    <a (click)="navigateToSearch()">
+    <a (click)="navigateToChecklist()">
       <mat-icon matBadge={{getaddToCart()}} matBadgeColor="accent">local_grocery_store</mat-icon></a>
       
   </div>

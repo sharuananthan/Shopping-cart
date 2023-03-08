@@ -20,7 +20,7 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(){
     this.registerForm = this.fb.group({
-      username: ['', [Validators.required]],
+      userName: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(8)]],
     })
@@ -42,7 +42,7 @@ export class RegisterComponent implements OnInit {
       (res) => {
         console.log(res);
         console.log("User is registered");
-        this.router.navigate(['/auth/login']);
+        this.router.navigate(['/login']);
       }
     );
   }

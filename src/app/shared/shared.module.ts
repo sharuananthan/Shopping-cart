@@ -4,6 +4,7 @@ import { TopBarComponent } from './components/top-bar/top-bar.component';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatIconModule} from '@angular/material/icon';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import {MatIconModule} from '@angular/material/icon';
    CommonModule,
    MatAutocompleteModule ,
    MatBadgeModule,
-   MatIconModule
+   MatIconModule,
+   FormsModule
   
   ],
 
